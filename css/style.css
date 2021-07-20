@@ -1,41 +1,118 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-img{
-    max-width: 100px;
+img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
 }
-body{
-    font-family: 'Vollkorn', serif;
+body {
+  font-family: "Vollkorn", serif;
 }
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-a{
-    text-decoration: none
+a {
+  text-decoration: none;
 }
 
-.conteudo{
-    display: grid;
-    grid-template-columns: minmax(160px, 1fr) 3fr 300px;
-    grid-template-areas: 
+.conteudo {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+  grid-template-areas:
     "header   header  header"
     "sidnav   content anuncio"
-    "footer   footer  footer"
+    "footer   footer  footer";
 }
 
-.header{
-    grid-area: header;
+/* header */
+.header {
+  grid-area: header;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  padding: 30px;
 }
-.sidnav{
-    grid-area: sidnav;
+.logo {
+  max-width: 200px;
 }
-.content{
-    grid-area: content;
+.header ul {
+  display: flex;
+  flex-wrap: wrap;
 }
-.anuncios{
-    grid-area: anuncio;
+.header li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  background-color: rgb(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: linear 1s;
 }
-.footer{
-    grid-area: footer;
+.header li a:hover {
+  background: rgb(0, 0, 0, 0.5);
+}
+.header li + li {
+  margin-left: 10px;
+}
+
+/* SIDNAV */
+.sidnav {
+  grid-area: sidnav;
+  padding: 30px;
+  background: #fafbfc;
+}
+.sidnav li a {
+  display: block;
+  min-width: 60px;
+  max-width: 100px;
+  background: white;
+  margin: 0 auto 30px auto;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  transition: 1s ease-out;
+}
+.sidnav li a:hover {
+  background-color: #b07dfb;
+}
+/* Content */
+.content {
+  grid-area: content;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 30px;
+  gap: 30px;
+}
+.col-wide {
+  grid-column: 1 / -1;
+}
+.image1 {
+  grid-row: span 2;
+  align-self: end;
+}
+.image2 {
+  align-self: end;
+}
+
+/* Anuncios */
+.anuncios {
+  grid-area: anuncio;
+  background-color: #fafbfc;
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  gap: 30px;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  text-align: center;
+  padding: 30px;
+  color: white;
 }
